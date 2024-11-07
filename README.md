@@ -1,2 +1,2 @@
 # analysis-of-integrated-metal-micro-heater-in-silicon-photonics
-The analysis involve steady state and transient charecteristics of an integrated Ti metal-micro heater in Silicon waveguide.
+The report invloves Thermo-Optic analysis of metal-microheater integrated silicon waveguide phase-shifter
