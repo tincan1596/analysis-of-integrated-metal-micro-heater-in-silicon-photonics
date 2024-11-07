@@ -1,0 +1,3 @@
+groupscope('HEAT');
+t=getresult('monitor_1','temperature');
+?mean(t.T);

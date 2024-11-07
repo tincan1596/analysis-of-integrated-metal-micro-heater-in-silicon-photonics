@@ -1,0 +1,21 @@
+d2=linspace(0,4e-06,30);
+H=linspace(0,0.2e-06,30);
+X=meshgridx(d2,H); 
+Y=meshgridy(d2,H);
+Z=zeros(30,30);
+for(i=1:30){
+    select('micro-heater');
+    set('x',d2(i)+0.675e-6);
+    for(j=1:30){
+        select('rib');
+        set('y max',H(j));
+        select('micro-heater');
+        set('y',0.05e-06+H(j));
+        run('HEAT');
+        groupscope('HEAT');
+        t=getresult('monitor_1','temperature');
+        Z(j,i)=mean(t.T);
+        groupscope('::model');
+        switchtolayout;
+    }
+}

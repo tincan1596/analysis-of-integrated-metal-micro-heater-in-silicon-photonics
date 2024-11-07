@@ -1,0 +1,12 @@
+pw=0:0.0002:0.001;
+for(i=pw){
+    groupscope('HEAT');
+    select('uniform heat');
+    set('total power',i);
+    run('HEAT');
+    groupscope('HEAT');
+    t=getresult('monitor_1','temperature');
+    ?mean(t.T);
+    switchtolayout;
+    groupscope('::model');
+}
